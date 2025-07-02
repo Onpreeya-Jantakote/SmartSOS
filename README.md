@@ -15,7 +15,7 @@
 
 ## 📘 Use Case Diagram
 
-![Use Case Diagram]([./assets/usecase-diagram.png](https://raw.githubusercontent.com/Onpreeya-Jantakote/SmartSOS/main/usecase%20smartsos.png
+![Use Case Diagram]([./assets/usecase-diagram.png](https://raw.githubusercontent.com/Onpreeya-Jantakote/SmartSOS/blob/main/usecase%20smartsos.png
 ))
 
 ## ✨ คุณสมบัติหลัก
