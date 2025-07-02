@@ -35,7 +35,7 @@
 - **React.js** (Frontend)
 - **Firebase** (Authentication + Firestore + Storage)
 - **React Router**
-- **CSS-in-JS** หรือ Tailwind (ถ้ามี)
+- **CSS-in-JS**
 - **Google Maps API** (ระบุตำแหน่งเหตุ)
 
 ---
