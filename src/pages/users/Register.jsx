@@ -174,12 +174,13 @@ const styles = {
     fontWeight: "700",
     borderRadius: 8,
     border: "none",
-    backgroundColor: "#10b981",
+    backgroundColor: "#3b82f6", // สีฟ้าเหมือน login
     color: "#fff",
     cursor: "pointer",
-    boxShadow: "0 6px 12px rgba(16,185,129,0.5)",
+    boxShadow: "0 6px 12px rgba(59,130,246,0.5)", // เงาสีฟ้า
     transition: "background-color 0.3s",
   },
+
   error: {
     color: "#ef4444",
     fontWeight: "600",

@@ -7,6 +7,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -18,14 +19,25 @@ const Login = () => {
     try {
       await signInWithEmailAndPassword(auth, form.email, form.password);
       alert("เข้าสู่ระบบสำเร็จ!");
-      navigate("/dashboard"); 
+      navigate("/dashboard");
     } catch (err) {
       setError("อีเมลหรือรหัสผ่านไม่ถูกต้อง");
+      setShowModal(true); // เปิด modal
     }
   };
 
   return (
     <div style={styles.container}>
+      {showModal && (
+        <div style={styles.modalOverlay}>
+          <div style={styles.modalContent}>
+            <h3 style={{ marginBottom: 10, fontSize: 20 }}>เข้าสู่ระบบไม่สำเร็จ</h3>
+            <p style={{ color: "#ef4444", fontWeight: "600" }}>{error}</p>
+            <button onClick={() => setShowModal(false)} style={styles.modalButton}>ปิด</button>
+          </div>
+        </div>
+      )}
+
       <h2 style={styles.title}>เข้าสู่ระบบ</h2>
       <form onSubmit={handleLogin} style={styles.form}>
         <input
@@ -118,6 +130,37 @@ const styles = {
     fontWeight: "600",
     textDecoration: "none",
   },
+  modalOverlay: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: "rgba(0,0,0,0.5)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 999,
+  },
+  modalContent: {
+    backgroundColor: "#fff",
+    padding: 30,
+    borderRadius: 12,
+    boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
+    textAlign: "center",
+    maxWidth: 300,
+  },
+  modalButton: {
+    marginTop: 20,
+    padding: "10px 20px",
+    border: "none",
+    borderRadius: 8,
+    backgroundColor: "#ef4444",
+    color: "#fff",
+    fontWeight: "600",
+    cursor: "pointer",
+  },
+
 };
 
 export default Login;
